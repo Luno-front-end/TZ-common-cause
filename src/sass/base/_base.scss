@@ -1,0 +1,46 @@
+body {
+  background: url(../../images/ibg.jpg) center center no-repeat;
+  background-size: cover;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0px;
+  padding: 0px;
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+  font-size: 100%;
+  font-weight: inherit;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.container {
+  min-height: 100%;
+  margin: 0 auto;
+  padding: 0 15px 0 15px;
+
+  @include for-size(mobile) {
+    max-width: 561px;
+  }
+  @include for-size(min-tablet) {
+    width: 562px;
+  }
+  @include for-size(tablet) {
+    width: 753px;
+  }
+  @include for-size(desktop) {
+    width: 977px;
+  }
+}

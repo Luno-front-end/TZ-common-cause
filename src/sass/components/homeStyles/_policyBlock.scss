@@ -1,0 +1,26 @@
+.form-policy-container {
+  margin: 0 auto;
+  background-color: $bg-policy;
+  color: $primery-text-color;
+
+  max-width: 400px;
+  margin-top: 20px;
+  text-align: left;
+
+  padding: 5px;
+
+  border-radius: 5px;
+}
+.policy-text {
+  font-size: 11px;
+  line-height: 14px;
+  font-family: sans-serif;
+}
+.policy-checkbox {
+  margin-right: 5px;
+}
+.policy-link {
+  margin-left: 5px;
+  text-decoration: none;
+  color: $policy-color-text;
+}

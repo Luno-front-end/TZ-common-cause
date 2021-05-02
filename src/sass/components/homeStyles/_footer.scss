@@ -1,0 +1,36 @@
+.footer-container {
+  background-color: $bg-footer;
+  color: #fff;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.6);
+
+  width: 100%;
+
+  font-size: 13px;
+  text-align: center;
+
+  padding-bottom: 20px;
+
+  // overflow-x: hidden;
+  // -ms-flex-wrap: wrap;
+  // flex-wrap: wrap;
+}
+
+.container-list-footer {
+  margin-top: 20px;
+  padding-bottom: 15px;
+}
+.container-item-footer {
+  padding-left: 64px;
+  padding-right: 64px;
+  &:not(:first-child) {
+    margin-top: 10px;
+  }
+}
+.footer-link {
+  color: #fff;
+  display: block;
+  text-decoration: none;
+}
+// .copiright {
+// }
