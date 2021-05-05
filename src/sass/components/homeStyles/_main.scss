@@ -1,5 +1,19 @@
 .player-container {
   margin-top: 16px;
+  margin-left: auto;
+  margin-right: auto;
+  @include for-size(tablet) {
+    width: 635px;
+    height: 355px;
+  }
+  @media screen and(min-width:1101px) {
+    width: 925px;
+    height: 520px;
+  }
+  @include for-size(ultra-desktop) {
+    width: 970px;
+    height: 545px;
+  }
 }
 .player {
   width: 100%;

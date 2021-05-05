@@ -1,9 +1,29 @@
 .hiro-container {
   margin-top: 20px;
+  @include for-size(tablet) {
+    max-width: 690px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  @media screen and(min-width:1101px) {
+    margin-left: auto;
+  }
+  @include for-size(desktop) {
+    max-width: 740px;
+    margin-left: auto;
+  }
+  @include for-size(ultra-desktop) {
+    max-width: 740px;
+    margin-left: auto;
+  }
+  @include for-size(tv) {
+    max-width: 740px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 .hiro-text {
-  text-align: center;
   color: $primery-text-color;
 
   font-weight: 700;
@@ -12,10 +32,7 @@
   font-size: 28px;
   width: 100%;
   max-width: 740px;
-  margin-left: auto;
-  margin-right: auto;
   line-height: 40px;
-  margin-bottom: 10px;
 
   @include for-size(mobile) {
     font-size: 19px;

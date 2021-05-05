@@ -12,7 +12,15 @@
       @content;
     }
   } @else if $size == desktop {
-    @media screen and (min-width: 992px) and (max-width: 1200px) {
+    @media screen and (min-width: 992px) and (max-width: 1199px) {
+      @content;
+    }
+  } @else if $size == ultra-desktop {
+    @media screen and (min-width: 1200px) and (max-width: 1299px) {
+      @content;
+    }
+  } @else if $size == tv {
+    @media screen and (min-width: 1300px) {
       @content;
     }
   }

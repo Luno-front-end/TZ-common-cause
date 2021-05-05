@@ -19,12 +19,44 @@
 .container-list-footer {
   margin-top: 20px;
   padding-bottom: 15px;
+  @include for-size(tablet) {
+    display: flex;
+    padding-bottom: 5px;
+    justify-content: center;
+  }
+  @include for-size(desktop) {
+    display: flex;
+    padding-bottom: 5px;
+    justify-content: center;
+  }
+  @include for-size(ultra-desktop) {
+    display: flex;
+    padding-bottom: 5px;
+    justify-content: center;
+  }
+  @include for-size(tv) {
+    display: flex;
+    padding-bottom: 5px;
+    justify-content: center;
+  }
 }
 .container-item-footer {
   padding-left: 64px;
   padding-right: 64px;
   &:not(:first-child) {
     margin-top: 10px;
+    @include for-size(tablet) {
+      margin-top: 0;
+    }
+    @include for-size(desktop) {
+      margin-top: 0;
+    }
+    @include for-size(ultra-desktop) {
+      margin-top: 0;
+    }
+    @include for-size(tv) {
+      margin-top: 0;
+    }
   }
 }
 .footer-link {

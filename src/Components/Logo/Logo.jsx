@@ -5,7 +5,7 @@ import logo from "../../images/main-logo.png";
 export default function Header() {
   return (
     <div className="logo-container">
-      <Link to="/">
+      <Link to="/" className="logo-link">
         <img className="logo" src={logo} alt="Общее дело" />
       </Link>
     </div>

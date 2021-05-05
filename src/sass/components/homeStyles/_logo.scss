@@ -2,6 +2,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  @media screen and (min-width: 1101px) {
+    position: fixed;
+    top: 30px;
+    left: 50px;
+  }
 }
 .logo {
   @include for-size(mobile) {
@@ -16,7 +21,25 @@
     margin-top: 25px;
     width: 200px;
   }
-  // @include for-size(desktop) {
+  @include for-size(desktop) {
+    margin-top: 25px;
+    width: 200px;
+  }
+  @include for-size(ultra-desktop) {
+    margin-top: 25px;
+    width: 200px;
+  }
+  @include for-size(tv) {
+    margin-top: 25px;
+    width: 200px;
+  }
+}
 
-  // }
+.logo-link {
+  transition: transform 200ms linear;
+  &:hover,
+  &:focus {
+    transform: scale(1.1);
+    transition: transform 200ms linear;
+  }
 }

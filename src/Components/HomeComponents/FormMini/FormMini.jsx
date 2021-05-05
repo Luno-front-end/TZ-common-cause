@@ -35,32 +35,34 @@ export default function FormMini() {
 
   return (
     <form className="form-home" onSubmit={dataSend}>
-      <div className="container-input-form">
-        <label className="form-lable" htmlFor="20"></label>
-        <input
-          className="form-input-name"
-          type="text"
-          id="20"
-          name="name"
-          value={name}
-          onChange={onChange}
-          placeholder="Ваше имя"
-        />
-        <FaUserCircle className="icon-form-user" />
-      </div>
-      <div className="container-input-form">
-        <label htmlFor="email"></label>
+      <div className="box-input-flex">
+        <div className="container-input-form">
+          <label className="form-lable" htmlFor="20"></label>
+          <input
+            className="form-input-name"
+            type="text"
+            id="20"
+            name="name"
+            value={name}
+            onChange={onChange}
+            placeholder="Ваше имя"
+          />
+          <FaUserCircle className="icon-form-user" />
+        </div>
+        <div className="container-input-form">
+          <label htmlFor="email"></label>
 
-        <input
-          className="form-input-email"
-          type="email"
-          id="email"
-          name="email"
-          value={email}
-          onChange={onChange}
-          placeholder="Ваш актуальный e-mail"
-        />
-        <HiMail className="icon-form-email" />
+          <input
+            className="form-input-email"
+            type="email"
+            id="email"
+            name="email"
+            value={email}
+            onChange={onChange}
+            placeholder="Ваш актуальный e-mail"
+          />
+          <HiMail className="icon-form-email" />
+        </div>
       </div>
       {/* <PhoneInput
         country={"ua"}
@@ -73,20 +75,20 @@ export default function FormMini() {
         <button type="submit" className="btn-form-home">
           Пройти БЕСПЛАТНУЮ регистрацию!
         </button>
-      </div>
-      <div className="form-policy-container">
-        <input
-          type="checkbox"
-          className="policy-checkbox"
-          defaultChecked="true"
-        />
-        <span className="policy-text">
-          Я согласен на обработку персональных данных и получение рекламных
-          материалов, и я согласен с
-          <Link to="/policy" target="_blank" className="policy-link">
-            публичной офертой
-          </Link>
-        </span>
+        <div className="form-policy-container">
+          <input
+            type="checkbox"
+            className="policy-checkbox"
+            defaultChecked="true"
+          />
+          <span className="policy-text">
+            Я согласен на обработку персональных данных и получение рекламных
+            материалов, и я согласен с
+            <Link to="/policy" target="_blank" className="policy-link">
+              публичной офертой
+            </Link>
+          </span>
+        </div>
       </div>
     </form>
   );

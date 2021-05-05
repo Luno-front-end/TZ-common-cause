@@ -38,9 +38,15 @@ ul {
     width: 562px;
   }
   @include for-size(tablet) {
-    width: 753px;
+    width: 738px;
   }
   @include for-size(desktop) {
     width: 977px;
+  }
+  @include for-size(ultra-desktop) {
+    width: 1170px;
+  }
+  @include for-size(tv) {
+    width: 1270px;
   }
 }

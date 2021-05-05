@@ -1,7 +1,7 @@
 export default function Hiro() {
   return (
     <div className="hiro-container">
-      <h1 className="hiro-text">
+      <h1 className="hiro-text animate__slideInLeft">
         Уникальное новшество от программистов, благодаря которому обычные
         русские работяги получают дополнительно от 60.000 рублей в месяц, уделяя
         всего 15 минут в день! Посмотрите видео, пройдите бесплатную регистрацию

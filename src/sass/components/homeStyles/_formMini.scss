@@ -9,6 +9,8 @@
 .form-home {
   max-width: 780px;
   margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
   display: flex;
   flex-direction: column;
 
@@ -20,6 +22,41 @@
   position: relative;
   &:not(:first-child) {
     margin-top: 20px;
+    @include for-size(tablet) {
+      margin-top: 0;
+      margin-left: 30px;
+    }
+    @include for-size(desktop) {
+      margin-top: 0;
+      margin-left: 30px;
+    }
+    @include for-size(ultra-desktop) {
+      margin-top: 0;
+      margin-left: 30px;
+    }
+    @include for-size(tv) {
+      margin-top: 0;
+      margin-left: 30px;
+    }
+  }
+}
+
+.box-input-flex {
+  @include for-size(tablet) {
+    display: flex;
+    justify-content: center;
+  }
+  @include for-size(desktop) {
+    display: flex;
+    justify-content: center;
+  }
+  @include for-size(ultra-desktop) {
+    display: flex;
+    justify-content: center;
+  }
+  @include for-size(tv) {
+    display: flex;
+    justify-content: center;
   }
 }
 .form-input-name {
@@ -59,17 +96,22 @@
 
 .container-btn-form {
   position: relative;
+  max-width: 100%;
   margin-top: 40px;
   padding-left: 15px;
   padding-right: 15px;
   @media screen and (min-width: 861px) {
-    &::before {
+    &::before,
+    &::after {
       content: "";
       opacity: 0.5;
       position: absolute;
+      top: 0px;
+      left: -20%;
+
       width: 140%;
       height: 100%;
-      left: -20%;
+
       transition: 0.3s;
       background-image: url(../../../images/main-form-left-arrow.png);
       background-position: left center;
@@ -80,20 +122,26 @@
       pointer-events: none;
       filter: hue-rotate(180deg);
     }
+
     &::after {
-      content: "";
-      opacity: 0.5;
-      position: absolute;
-      width: 140%;
-      height: 100%;
-      left: -20%;
-      transition: 0.3s;
       background-image: url(../../../images/main-form-right-arrow.png);
       background-position: right center;
-      background-repeat: no-repeat;
-      animation: slideArrows 1.5s 0s infinite both;
-      pointer-events: none;
-      filter: hue-rotate(180deg);
+    }
+
+    @keyframes slideArrows {
+      70% {
+        width: 130%;
+        height: 100%;
+        left: -15%;
+        opacity: 1;
+      }
+
+      100% {
+        width: 130%;
+        height: 100%;
+        left: -15%;
+        opacity: 0;
+      }
     }
   }
 }
