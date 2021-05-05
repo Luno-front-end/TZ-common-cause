@@ -1,4 +1,5 @@
 .player-container {
+  position: relative;
   margin-top: 16px;
   margin-left: auto;
   margin-right: auto;
@@ -21,4 +22,40 @@
   border: 0;
   border: 3px solid #fff;
   background-color: #000;
+}
+
+.btn-video-volume {
+  position: absolute;
+  top: calc(50% - 70px);
+  left: calc(50% - 80px);
+  z-index: 1;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  width: 160px;
+  height: 140px;
+
+  background: rgba(0, 0, 0, 0.5);
+
+  border: none;
+  border-radius: 5px;
+
+  cursor: pointer;
+  animation: pulse 1s linear infinite;
+
+  color: $primery-text-color;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.hideBtn {
+  display: none;
+}
+
+.volume-icon {
+  width: 100px;
+  height: 100px;
 }
