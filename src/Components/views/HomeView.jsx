@@ -9,15 +9,7 @@ import Footer from "../Footer/Footer";
 import ModalHome from "../HomeComponents/ModalHome";
 
 export default function HomeViews() {
-  //   container.onmouseover = container.onmouseout = handler;
-
-  // function handler(event) {
-
-  //   function str(el) {
-
-  //     if (!el) return "null"
-  //     return el.className || el.tagName;
-  //   }
+  document.body.classList.remove("body-styles");
 
   return (
     <div>

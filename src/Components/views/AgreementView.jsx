@@ -1,4 +1,5 @@
 export default function Agreement() {
+   document.body.classList.remove("body-styles");
   return (
     <div className="info">
       <div>

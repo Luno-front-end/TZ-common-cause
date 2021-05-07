@@ -4,6 +4,7 @@ import Policy from "./Components/views/PolicyView";
 import Agreement from "./Components/views/AgreementView";
 import InfoTable from "./Components/InfoTable/InfoTable";
 import RegisterInfoView from "./Components/views/RegistrInfoView";
+import InfoView from "./Components/views/InfoView";
 // import Test from "./Components/Test";
 
 function App() {
@@ -17,7 +18,9 @@ function App() {
         <RegisterInfoView />
         <InfoTable />
       </Route>
-
+      <Route path="/thanks">
+        <InfoView />
+      </Route>
       <Route path="/policy">
         <Policy />
       </Route>
