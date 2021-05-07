@@ -1,0 +1,340 @@
+.react-tel-input {
+  font-family: "Montserrat", sans-serif !important;
+  height: 100% !important;
+  font-size: 1rem !important;
+  @include for-size(mobile) {
+    width: 250px;
+    height: 50px !important;
+  }
+  @include for-size(min-tablet) {
+    width: 250px;
+    height: 50px !important;
+  }
+  @include for-size(tablet) {
+    width: 250px;
+    height: 50px !important;
+  }
+  @include for-size(desktop) {
+    width: 250px;
+    height: 50px !important;
+  }
+  @include for-size(ultra-desktop) {
+    width: 250px;
+    height: 50px !important;
+  }
+  @include for-size(tv) {
+    width: 250px;
+    height: 50px !important;
+  }
+  & .flag-dropdown {
+    width: 50px !important;
+
+    background-color: #f2f2f2 !important;
+    border: none !important;
+    border-radius: 3px !important;
+  }
+
+  & .form-control {
+    width: 100% !important;
+    height: 100% !important;
+
+    color: #495057;
+
+    font-size: 1rem !important;
+    line-height: 1.5 !important;
+    border-radius: 5px !important;
+    padding: 13px 50px !important;
+    border: none !important;
+    &:focus {
+      border-color: #80bdff;
+      outline: 0;
+      box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    }
+  }
+}
+.flag {
+  margin-left: 6px;
+}
+.big-container {
+}
+
+.box-input-flex-reg {
+  @include for-size(tablet) {
+    display: flex;
+    justify-content: center;
+  }
+  @include for-size(desktop) {
+    display: flex;
+    justify-content: center;
+  }
+  @include for-size(ultra-desktop) {
+    display: flex;
+    justify-content: center;
+  }
+  @include for-size(tv) {
+    display: flex;
+    justify-content: center;
+  }
+  // @include for-size(tablet) {
+  //   display: flex;
+  //   justify-content: center;
+  //   flex-wrap: wrap;
+  // }
+  // @include for-size(desktop) {
+  //   display: flex;
+  //   justify-content: center;
+  //   flex-wrap: wrap;
+  // }
+  // @include for-size(ultra-desktop) {
+  //   display: flex;
+  //   justify-content: center;
+  //   flex-wrap: wrap;
+  // }
+  // @include for-size(tv) {
+  //   display: flex;
+  //   justify-content: center;
+  //   flex-wrap: wrap;
+  // }
+}
+
+.small-container {
+  @include for-size(mobile) {
+    &:not(:first-child) {
+      margin-top: 16px;
+    }
+  }
+
+  @include for-size(min-tablet) {
+    &:not(:first-child) {
+      margin-top: 16px;
+    }
+  }
+
+  @include for-size(tablet) {
+    &:not(:first-child) {
+      margin-left: 30px;
+    }
+  }
+
+  @include for-size(desktop) {
+    &:not(:first-child) {
+      margin-left: 30px;
+    }
+  }
+
+  @include for-size(ultra-desktop) {
+    &:not(:first-child) {
+      margin-left: 30px;
+    }
+  }
+
+  @include for-size(tv) {
+    &:not(:first-child) {
+      margin-left: 30px;
+    }
+  }
+
+  & .container-input-form-reg {
+    position: relative;
+
+    @include for-size(mobile) {
+      &:not(:first-child) {
+        margin-top: 16px;
+      }
+    }
+
+    @include for-size(min-tablet) {
+      &:not(:first-child) {
+        margin-top: 16px;
+      }
+    }
+
+    @include for-size(tablet) {
+      width: 250px;
+      &:not(:first-child) {
+        margin-top: 16px;
+      }
+    }
+
+    @include for-size(desktop) {
+      width: 250px;
+      &:not(:first-child) {
+        margin-top: 16px;
+      }
+    }
+
+    @include for-size(ultra-desktop) {
+      width: 250px;
+      &:not(:first-child) {
+        margin-top: 16px;
+      }
+    }
+
+    @include for-size(tv) {
+      width: 250px;
+      &:not(:first-child) {
+        margin-top: 16px;
+      }
+    }
+  }
+}
+.step-one-h {
+  text-align: center;
+  color: #fff;
+  margin-top: 40px;
+  margin-bottom: 15px;
+  font-weight: 600;
+  font-size: 20px;
+}
+.step-one-text {
+  color: #1a8dc7;
+  font-weight: 600;
+}
+
+.additional-container-btn {
+  position: relative;
+  margin: 0 auto;
+  width: 550px;
+  @include for-size(mobile) {
+    width: 100%;
+  }
+  @include for-size(min-tablet) {
+    width: 100%;
+  }
+}
+
+.btn-big-form {
+  display: block;
+
+  color: #fff;
+  background: linear-gradient(90deg, #1eacf5 0%, #1885bc 100%);
+  box-shadow: 0 0 15px 0 #1eacf5;
+
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 27px;
+  text-transform: uppercase;
+  text-align: right;
+  text-decoration: none;
+
+  margin-left: 45px;
+  padding: 22px 15px;
+
+  max-width: 480px;
+
+  border-radius: 3px;
+
+  outline: none;
+  transition: all ease 0.3s;
+
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    top: -7px;
+    box-shadow: 0 10px 15px 0 #1eacf5;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    z-index: 2;
+    left: -10px;
+    top: 50%;
+
+    display: block;
+
+    background: url(../../../images/main-form-button.png) center center
+      no-repeat;
+    background-size: 100% 100%;
+
+    width: 132px;
+    height: 126px;
+
+    margin-top: -63px;
+
+    pointer-events: none;
+
+    transition: 0.3s;
+    filter: hue-rotate(180deg);
+    @include for-size(mobile) {
+      display: none;
+    }
+    @include for-size(min-tablet) {
+      display: none;
+    }
+  }
+  @include for-size(mobile) {
+    margin: 0 auto;
+    padding-left: 15px;
+    font-size: 17px;
+    line-height: 24px;
+    text-align: center;
+  }
+  @include for-size(min-tablet) {
+    margin: 0 auto;
+    padding-left: 15px;
+    font-size: 17px;
+    line-height: 24px;
+    text-align: center;
+  }
+}
+.additional-container-policy {
+  color: #fff;
+  max-width: 400px;
+  text-align: left;
+  position: relative;
+  margin-top: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 5px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+}
+
+.arrow-reg {
+  @media screen and (min-width: 861px) {
+    &::before,
+    &::after {
+      content: "";
+      opacity: 0.5;
+      position: absolute;
+      top: 0px;
+      left: -20%;
+
+      width: 140%;
+      height: 100%;
+
+      transition: 0.3s;
+      background-image: url(../../../images/main-form-left-arrow.png);
+      background-position: left center;
+      background-repeat: no-repeat;
+
+      animation: slideArrows 1.5s 0s infinite both;
+
+      pointer-events: none;
+      filter: hue-rotate(180deg);
+    }
+
+    &::after {
+      background-image: url(../../../images/main-form-right-arrow.png);
+      background-position: right center;
+    }
+
+    @keyframes slideArrows {
+      70% {
+        width: 130%;
+        height: 100%;
+        left: -15%;
+        opacity: 1;
+      }
+
+      100% {
+        width: 130%;
+        height: 100%;
+        left: -15%;
+        opacity: 0;
+      }
+    }
+  }
+}

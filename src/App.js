@@ -3,6 +3,7 @@ import HomeView from "./Components/views/HomeView";
 import Policy from "./Components/views/PolicyView";
 import Agreement from "./Components/views/AgreementView";
 import InfoTable from "./Components/InfoTable/InfoTable";
+import RegisterInfoView from "./Components/views/RegistrInfoView";
 // import Test from "./Components/Test";
 
 function App() {
@@ -10,6 +11,10 @@ function App() {
     <>
       <Route exact path="/">
         <HomeView />
+        <InfoTable />
+      </Route>
+      <Route path="/registration">
+        <RegisterInfoView />
         <InfoTable />
       </Route>
 

@@ -11,6 +11,7 @@
     "axios": "^0.21.1",
     "intl-tel-input": "^17.0.12",
     "modern-normalize": "^1.0.0",
+    "netlify": "^6.1.27",
     "node-sass": "^5.0.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -25,7 +26,10 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "netlify deploy -p",
+    "op": "netlify open --site"
   },
   "eslintConfig": {
     "extends": [

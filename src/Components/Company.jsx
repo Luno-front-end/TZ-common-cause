@@ -1,8 +1,8 @@
-import companyOne from "../../../images/company/company-one.png";
-import companyTwo from "../../../images/company/company-two.png";
-import companyThree from "../../../images/company/company-three.png";
-import companyFour from "../../../images/company/company-four.png";
-import companyFive from "../../../images/company/company-five.png";
+import companyOne from "../images/company/company-one.png";
+import companyTwo from "../images/company/company-two.png";
+import companyThree from "../images/company/company-three.png";
+import companyFour from "../images/company/company-four.png";
+import companyFive from "../images/company/company-five.png";
 
 export default function Company() {
   return (

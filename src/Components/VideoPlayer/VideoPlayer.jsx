@@ -2,7 +2,7 @@ import { useState } from "react";
 import { FaVolumeUp } from "react-icons/fa";
 import classnames from "classnames";
 
-export default function Main() {
+export default function VideoPlayer({ classContainer, linkVideo }) {
   const [mutedValues, setMutedValues] = useState(true);
   const [hideBtn, setРideBtn] = useState(false);
 
@@ -12,7 +12,7 @@ export default function Main() {
   }
 
   return (
-    <div className="player-container">
+    <div className={classContainer}>
       <video
         className="player"
         autoPlay
@@ -21,10 +21,7 @@ export default function Main() {
         width="620"
         height="370"
       >
-        <source
-          src="https://files.devio.top:9443/promoVideo.mp4"
-          type="video/mp4"
-        />
+        <source src={linkVideo} type="video/mp4" />
       </video>
       <button
         onClick={mutedVolume}

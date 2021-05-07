@@ -1,0 +1,154 @@
+.wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999999;
+  background-color: rgba(0, 0, 0, 0.75);
+  width: 100%;
+  height: 100%;
+  //   transform: translate(-50%, -50%);
+  transition: 0.4s;
+  animation: showModal 1.5s 0s both;
+
+  opacity: 0;
+}
+
+@keyframes showModal {
+  to {
+    opacity: 1;
+  }
+}
+
+.modal-home {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  width: 535px;
+
+  transform: translate(-50%, -50%);
+}
+
+.form-modal {
+  & .box-input-flex {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.modal-home-box {
+  background-color: #ffffff;
+  text-align: center;
+  padding: 5px 65px 15px;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+.overHiden {
+  overflow: hidden;
+}
+
+.p-modal-home {
+  color: #000;
+
+  text-align: center;
+  font-size: 16px;
+  line-height: 18px;
+
+  margin-bottom: 15px;
+}
+
+.container-input-modal {
+  position: relative;
+  width: 100%;
+  margin-bottom: 10px;
+  & .form-input-name {
+    background-color: #ededed;
+  }
+  & .form-input-email {
+    background-color: #ededed;
+  }
+}
+
+.box-modal-btn {
+  max-width: 405px;
+  margin: 0 auto;
+  & .form-policy-container {
+    background-color: #fff;
+    color: #333;
+
+    font-size: 11px;
+    line-height: 14px;
+  }
+}
+
+.heading-modal-home {
+  color: #1eacf5;
+
+  font-size: 24px;
+  font-weight: 700;
+  text-align: center;
+  line-height: 24px;
+
+  margin-bottom: 10px;
+}
+
+.btn-modal-home {
+  position: relative;
+  top: 0;
+  z-index: 1;
+
+  display: block;
+  width: 100%;
+
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 27px;
+  text-transform: uppercase;
+
+  color: #fff;
+  background: linear-gradient(90deg, #1eacf5 0%, #1885bc 100%);
+  box-shadow: 0 0 15px 0 #1eacf5;
+
+  padding: 22px 15px;
+
+  border-radius: 3px;
+
+  border: none;
+  outline: none;
+
+  transition: all ease 0.3s;
+  text-decoration: none;
+  cursor: pointer;
+  &:hover,
+  &:focus {
+    top: -7px;
+    box-shadow: 0 10px 15px 0 #1eacf5;
+  }
+}
+
+.box-icon-modal {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.icon-modal {
+  width: 11px;
+  height: 11px;
+  margin-left: auto;
+  z-index: 999;
+}
+
+.btn-close-modal {
+  background-color: transparent;
+  color: white;
+  border: none;
+  width: 11px;
+  height: 11px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}

@@ -1,0 +1,48 @@
+.arrows-container {
+  width: 100%;
+
+  @media screen and (min-width: 861px) {
+    &::before,
+    &::after {
+      content: "";
+      opacity: 0.5;
+      position: absolute;
+      top: 0px;
+      left: -20%;
+
+      width: 140%;
+      height: 100%;
+
+      transition: 0.3s;
+      background-image: url(../../images/main-form-left-arrow.png);
+      background-position: left center;
+      background-repeat: no-repeat;
+
+      animation: slideArrows 1.5s 0s infinite both;
+
+      pointer-events: none;
+      filter: hue-rotate(180deg);
+    }
+
+    &::after {
+      background-image: url(../../images/main-form-right-arrow.png);
+      background-position: right center;
+    }
+
+    @keyframes slideArrows {
+      70% {
+        width: 130%;
+        height: 100%;
+        left: -15%;
+        opacity: 1;
+      }
+
+      100% {
+        width: 130%;
+        height: 100%;
+        left: -15%;
+        opacity: 0;
+      }
+    }
+  }
+}

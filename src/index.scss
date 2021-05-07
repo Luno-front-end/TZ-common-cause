@@ -1,12 +1,18 @@
 @import "./sass/base/mixin";
 @import "./sass/base/base";
 @import "./sass/variables/variables";
-@import "./sass/components/HomeStyles/logo";
-@import "./sass/components/HomeStyles/hiro";
-@import "./sass/components/HomeStyles/main";
-@import "./sass/components/HomeStyles/formMini";
+@import "./sass/components/logo";
+@import "./sass/components/homeStyles/hiro";
+@import "./sass/components/videoPlayer";
+@import "./sass/components/form";
+@import "./sass/components/registrStyles/formBig";
+@import "./sass/components/arrows";
 @import "./sass/components/homeStyles/policyBlock";
 @import "./sass/components/homeStyles/company";
+@import "./sass/components/registrStyles/general";
+
 @import "./sass/components/homeStyles/footer";
 @import "./sass/components/policy/policy";
 @import "./sass/components/infoTable";
+@import "./sass/components/homeStyles/modalHome";
+//
