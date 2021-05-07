@@ -1,4 +1,6 @@
 import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
+
 import Container from "../Container/Container";
 
 import Logo from "../Logo/Logo";
@@ -7,6 +9,9 @@ import FormBig from "../RegisterInfo/FormBig";
 import Company from "../Company";
 
 export default function RegisterInfoView() {
+  const { name, email } = useLocation();
+  document.body.classList.remove("body-styles");
+  // console.log(name);
   return (
     <div className="container-registration">
       <header>
@@ -22,7 +27,9 @@ export default function RegisterInfoView() {
           />
           <FormBig
             classArrow="arrow-reg"
-            newClassContainerForInput={"small-container"}
+            newClassContainerForInput="small-container"
+            nameValue={name}
+            emailValue={email}
           />
           <Company />
         </Container>

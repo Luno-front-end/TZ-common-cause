@@ -1,13 +1,13 @@
 // import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
-import { emailSend } from "../../services/fetchEmail";
+
 import { useState } from "react";
 import { FaUserCircle } from "react-icons/fa";
 import { HiMail } from "react-icons/hi";
 import { Link, Redirect } from "react-router-dom";
 import ButtonRedirect from "../ButtonRedirect";
 import Arrows from "../Arrows";
-import useSendDataForm from "../hooks/useSendDataForm";
+// import useSendDataForm from "../hooks/useSendDataForm";
 
 export default function FormMini({
   text,
@@ -21,11 +21,15 @@ export default function FormMini({
   btnText,
   additionalContainerPolicy,
   classArrow,
+  nameValue,
+  emailValue,
+  lastNameValue,
+  valueNumber,
 }) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
 
-  const stateInput = useSendDataForm(name, email);
+  // const stateInput = useSendDataForm(name, email);
 
   const onChange = (e) => {
     const { name, value } = e.currentTarget;
@@ -44,21 +48,15 @@ export default function FormMini({
     }
   };
 
-  const dataSend = (e) => {
-    e.preventDefault();
-    stateInput();
-    // emailSend(name, email);
-  };
-  // onSubmit = { dataSend };
-
-  const onClick = () => {
-    // console.log("qwe");
-  };
+  // const dataSend = (e) => {
+  //   e.preventDefault();
+  // };
+  // console.log(onSubmit);
 
   return (
     <div>
       {text}
-      <form className="form-home" onSubmit={dataSend}>
+      <form className="form-home">
         <div
           className={newClassContainer ? newClassContainer : "box-input-flex"}
         >
@@ -78,7 +76,8 @@ export default function FormMini({
                 type="text"
                 id="20"
                 name="name"
-                value={name}
+                autocomplete="off"
+                value={nameValue ? nameValue : name}
                 onChange={onChange}
                 placeholder="Ваше имя"
               />
@@ -94,7 +93,8 @@ export default function FormMini({
                 type="email"
                 id="email"
                 name="email"
-                value={email}
+                autocomplete="off"
+                value={emailValue ? emailValue : email}
                 onChange={onChange}
                 placeholder="Ваш актуальный e-mail"
               />
@@ -110,8 +110,12 @@ export default function FormMini({
               {/* <div> */}
               <ButtonRedirect
                 addClassBtn={addClassBtn}
-                onClick={onClick}
+                // onClick={onClick}
                 redirect={page}
+                valueNameBtn={nameValue ? nameValue : name}
+                valueEmailBtn={emailValue ? emailValue : email}
+                lastNameValue={lastNameValue}
+                valueNumber={valueNumber}
               >
                 {btnText}
               </ButtonRedirect>
