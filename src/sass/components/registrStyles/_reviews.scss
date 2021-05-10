@@ -7,20 +7,109 @@
   padding-top: 270px;
 }
 .heading-one-reviews {
+  color: #1a8dc7;
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 20px;
+  font-size: 38px;
+  text-transform: uppercase;
 }
-.heading-one-reviews {
+.heading-two-reviews {
+  text-align: center;
+  margin-bottom: 70px;
+  text-transform: uppercase;
+  color: #132752;
+  font-size: 20px;
+  font-weight: 700;
 }
 .card-reviews {
 }
+.real-reviews {
+  margin-bottom: 30px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+  color: #132752;
+  font-size: 16px;
+}
 .list-reviews {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  display: flex;
+  max-width: 866px;
+  width: 100%;
+  position: relative;
+  flex-wrap: wrap;
+
+  &::after {
+    position: absolute;
+    display: block;
+    content: "";
+    width: 43px;
+    height: 79px;
+    background: url(../../../images/main-two-form-arrow.png) center center
+      no-repeat;
+    background-size: 100% 100%;
+    top: -25px;
+    right: -90px;
+    pointer-events: none;
+  }
+  &::before {
+    position: absolute;
+    display: block;
+    content: "";
+    width: 43px;
+    height: 79px;
+    background: url(../../../images/main-two-form-arrow.png) center center
+      no-repeat;
+    background-size: 100% 100%;
+    top: -25px;
+    left: -90px;
+    transform: scale(-1, 1);
+    pointer-events: none;
+  }
 }
 .item-reviews {
-}
-.heading-user-reviews {
-}
-.info-reviews {
-}
-.earnings-reviews {
+  pointer-events: none;
+  width: 405px;
+  background: #fff;
+  border-radius: 7px;
+  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.3);
+  margin-bottom: 23px;
+  padding: 18px;
+  align-items: flex-start;
+  margin-left: auto;
+  margin-right: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
 }
 .img-user-reviews {
+  width: 88px;
+  height: 88px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+.containerinfo-card-reviews {
+  margin-left: 15px;
+}
+.heading-user-reviews {
+  color: #000;
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 5px;
+  line-height: 10px;
+}
+.info-reviews {
+  color: #000;
+  font-size: 16px;
+}
+.earnings-reviews {
+  color: #10cc1b;
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 35px;
 }

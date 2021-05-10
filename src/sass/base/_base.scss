@@ -4,23 +4,19 @@ body {
   background-size: cover;
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
+  overflow-x: hidden;
+}
+html {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 .body-styles {
   background: #fff;
-  // background: url(../../images/thanks-bg.jpg) top center no-repeat;
-  // background-size: cover;
-  // padding-bottom: 4rem;
-  // height: 100vh;
+
+  // overflow-x: hidden;
 }
-// .body-reg-styles {
-//   background: #fff;
-//   // background: url(../../images/rbg.jpg) center center no-repeat;
-//   // background-size: cover;
-//   // padding-bottom: 4rem;
-//   // width: 100%;
-//   // min-height: 100vh;
-// }
 
 h1,
 h2,
