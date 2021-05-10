@@ -16,13 +16,6 @@ export default function useInfoTableHook() {
     return () => clearComponent();
   }, []);
 
-  // useEffect(() => {
-  //   fakePipleW();
-  //   fakePipleP();
-  // }, []);
-  // watchingNum;
-  //  useEffect(() => {}, [placesNum]);
-
   useEffect(() => {
     if (watchingNum > 246) {
       clearInterval(idIntW);
@@ -76,13 +69,6 @@ export default function useInfoTableHook() {
     setWatchingNum("");
     setidIntW(null);
   };
-
-  //   const state = {
-  //     placesNum,
-  //     watchingNum,
-  //     idIntP,
-  //     idIntW,
-  //   };
 
   return { placesNum, watchingNum, idIntP, idIntW };
 }

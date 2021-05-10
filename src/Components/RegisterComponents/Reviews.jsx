@@ -1,7 +1,46 @@
-import userOne from "../../images/users/11.jpg";
-import usertwo from "../../images/users/100.jpg";
+import { useEffect, useState } from "react";
+import { userFetch } from "../../services/fetchUser";
+
+// import { users } from "../../users.json";
 
 export default function Reviews() {
+  const [user, setUser] = useState([]);
+  const [intId, setIntId] = useState(null);
+
+  useEffect(() => {
+    if (user.length >= 2) {
+      user.splice(0, 1);
+    }
+  }, [user]);
+
+  useEffect(() => {
+    userSet();
+    userSet();
+    setIntId(
+      setInterval(() => {
+        userSet();
+      }, 5000)
+    );
+    return clearEffect();
+  }, []);
+  // console.log();
+  const userSet = () => {
+    userFetch().then((users) => {
+      if (user.length === 0) {
+        setUser((prevState) => [...prevState, ...users]);
+
+        return;
+      }
+
+      setUser(...users);
+    });
+  };
+
+  const clearEffect = () => {
+    setIntId(null);
+    setUser([]);
+  };
+
   return (
     <section className="section-reviews">
       <h2 className="heading-one-reviews">Отлично! Вы справились!</h2>
@@ -15,7 +54,25 @@ export default function Reviews() {
             Реальные отзывы от пользователей программы «Общее дело»:
           </p>
           <ul className="list-reviews">
-            <li className="item-reviews">
+            {user.map((user) => (
+              <li key={user.login.salt} className="item-reviews">
+                <img
+                  src={user.picture.large}
+                  alt="user"
+                  className="img-user-reviews"
+                />
+
+                <div className="containerinfo-card-reviews">
+                  <h4 className="heading-user-reviews">
+                    {user.name.first} {user.name.last}
+                  </h4>
+                  <p className="info-reviews">только что заработал(а)</p>
+                  <p className="earnings-reviews">$ 333.33</p>
+                </div>
+              </li>
+            ))}
+
+            {/* <li className="item-reviews">
               <img src={userOne} alt="user" className="img-user-reviews" />
 
               <div className="containerinfo-card-reviews">
@@ -32,7 +89,7 @@ export default function Reviews() {
                 <p className="info-reviews">только что заработал(а)</p>
                 <p className="earnings-reviews">$ 333.33</p>
               </div>
-            </li>
+            </li> */}
           </ul>
         </article>
       </div>
