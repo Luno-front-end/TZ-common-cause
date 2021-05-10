@@ -4,12 +4,26 @@ import Logo from "../Logo/Logo";
 import Hiro from "../HomeComponents/Hiro";
 import VideoPlayer from "../VideoPlayer/VideoPlayer";
 import Form from "../Form/Form";
-import Company from "../Company";
+import Company from "../Company/Company";
 import Footer from "../Footer/Footer";
-import ModalHome from "../HomeComponents/ModalHome";
 
-export default function HomeViews() {
+import { useHistory } from "react-router";
+import { useEffect, useState } from "react";
+import ModalHome from "../Modal";
+
+export default function HomeViews({ checkOpenModal, modalOpen }) {
   document.body.classList.remove("body-styles");
+  const history = useHistory();
+  useEffect(() => {
+    historyTransitions();
+  }, []);
+
+  const historyTransitions = () => {
+    const { state } = history.location;
+    const location = (state && state.referrer) || "/";
+
+    history.push(location);
+  };
 
   return (
     <div>
@@ -18,7 +32,6 @@ export default function HomeViews() {
           <Logo classContainerLogo="logo-container" />
           <Hiro />
         </Container>
-        <ModalHome />
       </header>
       <main>
         <Container>
@@ -26,7 +39,11 @@ export default function HomeViews() {
             classContainer="player-container"
             linkVideo="https://files.devio.top:9443/promoVideo.mp4"
           />
-          <Form page="/registration" btnText="Пройти БЕСПЛАТНУЮ регистрацию!" />
+          <Form
+            page="/registration"
+            btnText="Пройти БЕСПЛАТНУЮ регистрацию!"
+            checkOpenModal={modalOpen}
+          />
           <Company />
         </Container>
       </main>
@@ -36,6 +53,11 @@ export default function HomeViews() {
           <Footer />
         </Container>
       </footer>
+      <ModalHome
+        checkOpenModal={checkOpenModal}
+        page="/registration"
+        headerText="Начните получать от 2500 у.е. в месяц!"
+      />
     </div>
   );
 }

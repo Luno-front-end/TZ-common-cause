@@ -1,0 +1,252 @@
+.container-steps {
+  background: #132752;
+  color: #fff;
+  padding: 1.9rem;
+}
+.list-steps {
+  max-width: 979px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  @include for-size(tablet) {
+    flex-wrap: nowrap;
+  }
+  @include for-size(desktop) {
+    flex-wrap: nowrap;
+  }
+  @include for-size(ultra-desktop) {
+    flex-wrap: nowrap;
+  }
+  @include for-size(tv) {
+    flex-wrap: nowrap;
+  }
+}
+.item-steps {
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  padding-left: 65px;
+  background-position: 25px center;
+  background-repeat: no-repeat;
+  position: relative;
+
+  line-height: 1.5;
+
+  text-align: center;
+  width: 100%;
+
+  @include for-size(mobile) {
+    justify-content: center;
+    &:first-child {
+      padding-top: 0.5rem;
+    }
+
+    padding: 2rem;
+  }
+  @include for-size(min-tablet) {
+    padding: 2rem;
+    justify-content: center;
+    &:first-child {
+      padding-top: 0.5rem;
+    }
+  }
+
+  @include for-size(tablet) {
+    padding-right: 15px;
+    text-align: left;
+  }
+  @include for-size(desktop) {
+    padding-right: 15px;
+    text-align: left;
+  }
+  @include for-size(ultra-desktop) {
+    padding-right: 15px;
+    text-align: left;
+  }
+  @include for-size(tv) {
+    padding-right: 15px;
+    text-align: left;
+  }
+
+  &:nth-child(1) {
+    background-image: url(../../../images/step-one.png);
+    @include for-size(tablet) {
+      // max-width: 25%;
+    }
+    @include for-size(desktop) {
+      max-width: 25%;
+    }
+    @include for-size(ultra-desktop) {
+      max-width: 25%;
+    }
+    @include for-size(tv) {
+      max-width: 25%;
+    }
+  }
+  &:nth-child(2) {
+    background-image: url(../../../images/step-two.png);
+
+    color: #13d61c;
+    @include for-size(tablet) {
+      max-width: 25%;
+    }
+    @include for-size(desktop) {
+      max-width: 25%;
+    }
+    @include for-size(ultra-desktop) {
+      max-width: 25%;
+    }
+    @include for-size(tv) {
+      max-width: 25%;
+    }
+  }
+  &:nth-child(3) {
+    background-image: url(../../../images/step-three.png);
+
+    color: #a5a5a5;
+    @include for-size(tablet) {
+      max-width: 25%;
+    }
+    @include for-size(desktop) {
+      max-width: 25%;
+    }
+    @include for-size(ultra-desktop) {
+      max-width: 25%;
+    }
+    @include for-size(tv) {
+      max-width: 25%;
+    }
+  }
+  &:nth-child(4) {
+    background-image: url(../../../images/step-four.png);
+
+    color: #a5a5a5;
+    @include for-size(tablet) {
+      max-width: 25%;
+    }
+    @include for-size(desktop) {
+      max-width: 25%;
+    }
+    @include for-size(ultra-desktop) {
+      max-width: 25%;
+    }
+    @include for-size(tv) {
+      max-width: 25%;
+    }
+  }
+
+  &:not(:last-child) {
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      border-top: 2px solid #fff;
+      border-right: 2px solid #fff;
+      width: 17px;
+      height: 17px;
+
+      top: initial;
+
+      transform: rotate(135deg);
+
+      @include for-size(mobile) {
+        bottom: 0px;
+        left: calc(50% - 17px / 2);
+      }
+      @include for-size(min-tablet) {
+        bottom: 0px;
+        left: calc(50% - 17px / 2);
+      }
+      @include for-size(tablet) {
+        margin-left: 15px;
+        transform: rotate(45deg);
+        right: 0;
+        top: calc(50% - 17px / 2);
+      }
+      @include for-size(desktop) {
+        margin-left: 15px;
+        transform: rotate(45deg);
+        right: 0;
+        top: calc(50% - 17px / 2);
+      }
+      @include for-size(ultra-desktop) {
+        margin-left: 15px;
+        transform: rotate(45deg);
+        right: 0;
+        top: calc(50% - 17px / 2);
+      }
+      @include for-size(tv) {
+        margin-left: 15px;
+        transform: rotate(45deg);
+        right: 0;
+        top: calc(50% - 17px / 2);
+      }
+    }
+  }
+}
+
+// .list-steps {
+//   max-width: 979px;
+//   margin: 0 auto;
+//   display: flex;
+//   flex-wrap: nowrap;
+// }
+// .item-steps {
+
+//   text-align: left;
+//   font-weight: 600;
+//   display: flex;
+
+//   align-items: center;
+//   padding-left: 65px;
+//   padding-right: 20px;
+//   background-position: 25px center;
+//   background-repeat: no-repeat;
+//   position: relative;
+
+//   line-height: 1.5;
+
+//   &:nth-child(1) {
+//     background-image: url(../../../images/step-one.png);
+//     @include for-size(tablet) {
+//       max-width: 25%;
+//     }
+//     @include for-size(desktop) {
+//       max-width: 25%;
+//     }
+//     @include for-size(tv) {
+//       max-width: 25%;
+//     }
+//   }
+//   &:nth-child(2) {
+//     background-image: url(../../../images/step-two.png);
+//     max-width: 25%;
+//     color: #13d61c;
+//   }
+//   &:nth-child(3) {
+//     background-image: url(../../../images/step-three.png);
+//     max-width: 25%;
+//     color: #a5a5a5;
+//   }
+//   &:nth-child(4) {
+//     background-image: url(../../../images/step-four.png);
+//     // max-width: 25%;
+//     color: #a5a5a5;
+//   }
+
+//   &:not(:last-child) {
+//     &::after {
+//       content: "";
+//       display: block;
+//       position: absolute;
+//       right: 0;
+//       top: calc(50% - 17px / 2);
+//       border-top: 2px solid #fff;
+//       border-right: 2px solid #fff;
+//       width: 17px;
+//       height: 17px;
+//       margin-left: 15px;
+//       transform: rotate(45deg);
+//     }
+//   }
+// }

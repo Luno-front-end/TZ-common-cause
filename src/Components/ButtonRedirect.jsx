@@ -17,19 +17,19 @@ export default function ButtonRedirect({
   //   return redirect;
   // };
   return (
-    <Link
+    <button
       type="submit"
       className={addClassBtn ? addClassBtn : "btn-form-home"}
-      onClick={onClick}
-      to={{
-        pathname: `${redirect}`,
-        name: valueNameBtn,
-        email: valueEmailBtn,
-        number: valueNumber,
-        lastName: lastNameValue,
-      }}
+      // onClick={onClick}
+      // to={{
+      //   pathname: `${redirect}`,
+      //   name: valueNameBtn,
+      //   email: valueEmailBtn,
+      //   number: valueNumber,
+      //   lastName: lastNameValue,
+      // }}
     >
       {children}
-    </Link>
+    </button>
   );
 }

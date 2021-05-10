@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Route } from "react-router-dom";
 import HomeView from "./Components/views/HomeView";
 import Policy from "./Components/views/PolicyView";
@@ -8,14 +9,21 @@ import InfoView from "./Components/views/InfoView";
 // import Test from "./Components/Test";
 
 function App() {
+  const [modalOpen, setModalOpen] = useState(false);
+  const checkOpenModal = (isOpen) => {
+    setModalOpen(isOpen);
+  };
   return (
     <>
       <Route exact path="/">
-        <HomeView />
+        <HomeView checkOpenModal={checkOpenModal} modalOpen={modalOpen} />
         <InfoTable />
       </Route>
       <Route path="/registration">
-        <RegisterInfoView />
+        <RegisterInfoView
+          checkOpenModal={checkOpenModal}
+          modalOpen={modalOpen}
+        />
         <InfoTable />
       </Route>
       <Route path="/thanks">

@@ -203,6 +203,10 @@
   }
 }
 
+.btn {
+  max-width: 480px;
+}
+
 .btn-big-form {
   display: block;
 
@@ -220,7 +224,7 @@
   margin-left: 45px;
   padding: 22px 15px;
 
-  max-width: 480px;
+  width: 100%;
 
   border-radius: 3px;
 
@@ -228,6 +232,8 @@
   transition: all ease 0.3s;
 
   cursor: pointer;
+
+  border: none;
 
   &:hover,
   &:focus {

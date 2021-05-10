@@ -27,16 +27,16 @@
   align-items: center;
 
   @include for-size(mobile) {
-    margin-top: 25px;
+    padding-top: 25px;
   }
   @include for-size(min-tablet) {
-    margin-top: 25px;
+    padding-top: 25px;
   }
   @include for-size(tablet) {
-    margin-top: 25px;
+    padding-top: 25px;
   }
   @media screen and (min-width: 992px) and (max-width: 1100px) {
-    margin-top: 25px;
+    padding-top: 25px;
   }
   @media screen and (min-width: 1101px) {
     position: fixed;

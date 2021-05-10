@@ -13,6 +13,7 @@ export default function useInfoTableHook() {
   useEffect(() => {
     clearInterval(idIntW);
     clearInterval(idIntP);
+    return () => clearComponent();
   }, []);
 
   // useEffect(() => {
@@ -67,6 +68,13 @@ export default function useInfoTableHook() {
         );
       }, 8000)
     );
+  };
+
+  const clearComponent = () => {
+    setPlacesNum("");
+    setidIntP(null);
+    setWatchingNum("");
+    setidIntW(null);
   };
 
   //   const state = {

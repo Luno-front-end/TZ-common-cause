@@ -1,35 +1,46 @@
-// import PhoneInput from "react-phone-input-2";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { FaUserCircle } from "react-icons/fa";
 import { HiMail } from "react-icons/hi";
-import { Link, Redirect } from "react-router-dom";
+import { Link, Redirect, useHistory, useLocation } from "react-router-dom";
 import ButtonRedirect from "../ButtonRedirect";
 import Arrows from "../Arrows";
-// import useSendDataForm from "../hooks/useSendDataForm";
+import { emailSend } from "../../services/fetchEmail";
 
 export default function FormMini({
-  text,
-  newClassContainer,
-  newClassContainerForInput,
-  newClassInput,
-  newInput,
   page,
-  additionalContainerBtn,
-  addClassBtn,
   btnText,
-  additionalContainerPolicy,
   classArrow,
-  nameValue,
-  emailValue,
-  lastNameValue,
-  valueNumber,
+  checkOpenModal,
 }) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [number, setNumber] = useState("");
+  const [link, setLink] = useState(null);
 
-  // const stateInput = useSendDataForm(name, email);
+  const history = useHistory();
+  const { pathname, nameProp, emailProp } = useLocation();
+
+  // console.log(checkOpenModal);
+
+  useEffect(() => {
+    if (nameProp) {
+      setName(nameProp);
+    }
+    if (emailProp) {
+      setEmail(emailProp);
+    }
+
+    return () => clearValue();
+  }, [emailProp, nameProp]);
+
+  // const notify = (message) => toast(message);
 
   const onChange = (e) => {
     const { name, value } = e.currentTarget;
@@ -42,33 +53,114 @@ export default function FormMini({
         setEmail(value);
 
         break;
+      case "lastName":
+        setLastName(value);
 
+        break;
       default:
         break;
     }
   };
 
-  // const dataSend = (e) => {
-  //   e.preventDefault();
-  // };
-  // console.log(onSubmit);
+  const onChangeNumber = (e) => {
+    setNumber(e);
+  };
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+    if (pathname === "/") {
+      if (name === "") {
+        toast.error("Ви не ввели имя", { position: "top-center" });
+        return;
+      }
+      if (email === "") {
+        toast.error("Ви не ввели почту", { position: "top-center" });
+        return;
+      }
+    }
+
+    setLink("/registration");
+
+    if (pathname !== "/registration") {
+      return;
+    }
+
+    setLink("");
+
+    if (name === "") {
+      toast.error("Ви не ввели имя", { position: "top-center" });
+      return;
+    }
+    if (email === "") {
+      toast.error("Ви не ввели почту", { position: "top-center" });
+      return;
+    }
+
+    if (lastName === "") {
+      toast.error("Ви не ввели фамилию", { position: "top-center" });
+      return;
+    }
+    if (number === "") {
+      toast.error("Ви не ввели номер", { position: "top-center" });
+      return;
+    }
+    setLink(page);
+    // emailSend(
+    //   nameProp ? nameProp : name,
+    //   emailProp ? emailProp : email,
+    //   lastName,
+    //   number
+    // );
+  };
+
+  const clearValue = () => {
+    setName("");
+    setEmail("");
+    setLastName("");
+    setNumber("");
+    setLink(null);
+  };
 
   return (
     <div>
-      {text}
-      <form className="form-home">
+      {!checkOpenModal && <ToastContainer />}
+      {link && (
+        <Redirect
+          to={{
+            pathname: `${page}`,
+            nameProp: name,
+            emailProp: email,
+            state: { referrer: history.location.pathname },
+          }}
+        />
+      )}
+      {pathname === "/registration" && (
+        <h1 className="step-one-h">
+          <span className="step-one-text">1 ШАГ:</span> Регистрация нового
+          пользователя «Общего дела».
+        </h1>
+      )}
+      <form className="form-home" onSubmit={onSubmit}>
         <div
-          className={newClassContainer ? newClassContainer : "box-input-flex"}
+          className={
+            pathname === "/registration"
+              ? "box-input-flex-reg"
+              : "box-input-flex"
+          }
         >
           <div
             className={
-              newClassContainerForInput
-                ? newClassContainerForInput
+              pathname === "/registration"
+                ? "small-container"
                 : "box-input-flex"
             }
           >
             <div
-              className={newClassInput ? newClassInput : "container-input-form"}
+              className={
+                pathname === "/registration"
+                  ? "container-input-form-reg"
+                  : "container-input-form"
+              }
             >
               <label className="form-lable" htmlFor="20"></label>
               <input
@@ -76,15 +168,19 @@ export default function FormMini({
                 type="text"
                 id="20"
                 name="name"
-                autocomplete="off"
-                value={nameValue ? nameValue : name}
+                autoComplete="off"
+                value={name}
                 onChange={onChange}
                 placeholder="Ваше имя"
               />
               <FaUserCircle className="icon-form-user" />
             </div>
             <div
-              className={newClassInput ? newClassInput : "container-input-form"}
+              className={
+                pathname === "/registration"
+                  ? "container-input-form-reg"
+                  : "container-input-form"
+              }
             >
               <label htmlFor="email"></label>
 
@@ -93,40 +189,66 @@ export default function FormMini({
                 type="email"
                 id="email"
                 name="email"
-                autocomplete="off"
-                value={emailValue ? emailValue : email}
+                autoComplete="off"
+                value={email}
                 onChange={onChange}
                 placeholder="Ваш актуальный e-mail"
               />
               <HiMail className="icon-form-email" />
             </div>
           </div>
-          {newInput}
+          {pathname === "/registration" && (
+            <div className="small-container">
+              <div className="container-input-form-reg">
+                <label htmlFor="lastName"></label>
+
+                <input
+                  className="form-input-email"
+                  type="text"
+                  id="lastName"
+                  name="lastName"
+                  autoComplete="off"
+                  value={lastName}
+                  onChange={onChange}
+                  placeholder="Фамилия"
+                />
+                <FaUserCircle className="icon-form-user" />
+              </div>
+              <div className="container-input-form-reg">
+                <PhoneInput
+                  country={"ua"}
+                  preferredCountries={["ua", "ru"]}
+                  value={number}
+                  onChange={onChangeNumber}
+                />
+              </div>
+            </div>
+          )}
         </div>
 
         <div className="container-btn-form">
-          <div className={additionalContainerBtn ? additionalContainerBtn : ""}>
+          <div
+            className={
+              pathname === "/registration" ? "additional-container-btn" : ""
+            }
+          >
             <Arrows classArrow={classArrow}>
-              {/* <div> */}
-              <ButtonRedirect
-                addClassBtn={addClassBtn}
-                // onClick={onClick}
-                redirect={page}
-                valueNameBtn={nameValue ? nameValue : name}
-                valueEmailBtn={emailValue ? emailValue : email}
-                lastNameValue={lastNameValue}
-                valueNumber={valueNumber}
-              >
-                {btnText}
-              </ButtonRedirect>
-              {/* </div> */}
+              <div className={pathname === "/registration" ? "btn" : ""}>
+                <ButtonRedirect
+                  addClassBtn={
+                    pathname === "/registration" ? "btn-big-form" : ""
+                  }
+                >
+                  {btnText}
+                </ButtonRedirect>
+              </div>
             </Arrows>
           </div>
 
           <div
             className={
-              additionalContainerPolicy
-                ? additionalContainerPolicy
+              pathname === "/registration"
+                ? "additional-container-policy"
                 : "form-policy-container"
             }
           >
