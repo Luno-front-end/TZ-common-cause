@@ -5,14 +5,7 @@ import { emailSend } from "../../services/fetchEmail";
 import ButtonRedirect from "../ButtonRedirect";
 
 export default function InfoView() {
-  // const { name, email, number, lastName } = useLocation();
-  // document.body.classList.add("body-styles");
-  // document.body.classList.re("body-reg-styles");
-  // useEffect(() => {
-  //   if (name || email || number || lastName !== undefined) {
-  //     emailSend(name, email, lastName, number);
-  //   }
-  // }, []);
+  document.body.classList.add("body-styles-thinks");
 
   return (
     <div className="container-thanks">

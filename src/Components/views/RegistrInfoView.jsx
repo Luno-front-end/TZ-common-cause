@@ -11,11 +11,18 @@ import Modal from "../Modal";
 import Company from "../Company/Company";
 import Reviews from "../RegisterComponents/Reviews";
 import HowWork from "../RegisterComponents/HowWork";
+import HelpSupport from "../RegisterComponents/HelpSupport";
+import SectionFormInfo from "../RegisterComponents/SectionFormInfo";
+import MiniCompanyReg from "../Company/MiniCompanyReg";
+import Footer from "../Footer/Footer";
 
 export default function RegisterInfoView({ modalOpen, checkOpenModal }) {
+  document.body.classList.remove("body-styles-thinks");
   document.body.classList.add("body-styles");
 
-  useEffect(() => {}, []);
+  const { pathname } = useLocation();
+
+  // useEffect(() => {}, []);
   // className = "container-registration";
   return (
     <>
@@ -43,17 +50,32 @@ export default function RegisterInfoView({ modalOpen, checkOpenModal }) {
           <Reviews />
         </Container>
         <HowWork />
+        <Container>
+          <HelpSupport />
+        </Container>
+        <SectionFormInfo page="/thanks" />
+        <Container>
+          <section className="section-company-reg">
+            <MiniCompanyReg />
+          </section>
+        </Container>
       </main>
 
-      {/* <footer className="footer-container">
+      <footer
+        className={
+          pathname === "/registration"
+            ? "footer-container-reg"
+            : "footer-container"
+        }
+      >
         <Container>
           <Footer />
         </Container>
-      </footer> */}
-      {/* <Modal
+      </footer>
+      <Modal
         checkOpenModal={checkOpenModal}
         headerText="Сегодня вам выпал счастливый шанс. Не упустите его!"
-      /> */}
+      />
     </>
   );
 }

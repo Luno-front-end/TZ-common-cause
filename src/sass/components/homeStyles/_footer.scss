@@ -15,6 +15,19 @@
   // -ms-flex-wrap: wrap;
   // flex-wrap: wrap;
 }
+.footer-container-reg {
+  background: #fff;
+  color: #000;
+
+  border-top: 1px solid #d1d1d1;
+
+  width: 100%;
+
+  font-size: 13px;
+  text-align: center;
+
+  padding-bottom: 20px;
+}
 
 .container-list-footer {
   margin-top: 20px;
@@ -64,5 +77,11 @@
   display: block;
   text-decoration: none;
 }
+.footer-link-reg {
+  color: #000;
+  display: block;
+  text-decoration: none;
+}
+
 // .copiright {
 // }

@@ -11,7 +11,7 @@ import { HiMail } from "react-icons/hi";
 import { VscChromeClose } from "react-icons/vsc";
 import { Link, Redirect, useHistory, useLocation } from "react-router-dom";
 import ModalContainer from "./ModalContainer/ModalContainer";
-import MiniCompany from "./Company/MiniCompany";
+import MiniCompany from "./Company/MiniCompanyModal";
 import { emailSend } from "../services/fetchEmail";
 
 export default function ModalHome({ page, checkOpenModal, headerText }) {
@@ -126,12 +126,7 @@ export default function ModalHome({ page, checkOpenModal, headerText }) {
       return;
     }
     setLink(page);
-    emailSend(
-      nameProp ? nameProp : name,
-      emailProp ? emailProp : email,
-      lastName,
-      number
-    );
+    emailSend(name, email, lastName, number);
   };
 
   return (

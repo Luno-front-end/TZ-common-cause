@@ -13,6 +13,7 @@ import ModalHome from "../Modal";
 
 export default function HomeViews({ checkOpenModal, modalOpen }) {
   document.body.classList.remove("body-styles");
+  document.body.classList.remove("body-styles-thinks");
   const history = useHistory();
   useEffect(() => {
     historyTransitions();

@@ -1,0 +1,107 @@
+.section-reg {
+  background: #fff url(../../../images/form-bg.jpg) center center no-repeat;
+  min-height: 451px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  @include for-size(mobile) {
+    background-size: cover;
+    padding-top: 20px;
+  }
+  @include for-size(min-tablet) {
+    background-size: cover;
+    padding-top: 20px;
+  }
+  @include for-size(tablet) {
+    background-size: cover;
+    padding-top: 20px;
+  }
+}
+.container-regInfo {
+  align-items: center;
+  display: flex;
+
+  margin-right: -15px;
+  margin-left: -15px;
+  @include for-size(mobile) {
+    flex-wrap: wrap;
+  }
+  @include for-size(min-tablet) {
+    flex-wrap: wrap;
+  }
+}
+.wrapper-formInfo {
+  @include for-size(mobile) {
+    margin: 0 auto;
+  }
+  @include for-size(min-tablet) {
+    margin: 0 auto;
+  }
+  @include for-size(tablet) {
+    margin-left: 15px;
+    padding-right: 15px;
+    flex: 0 0 41.666667%;
+    max-width: 41.666667%;
+  }
+  @include for-size(desktop) {
+    margin-left: 15px;
+    padding-right: 15px;
+    flex: 0 0 41.666667%;
+    max-width: 41.666667%;
+  }
+  @include for-size(ultra-desktop) {
+    margin-left: 15px;
+    padding-right: 15px;
+    flex: 0 0 41.666667%;
+    max-width: 41.666667%;
+  }
+  @include for-size(tv) {
+    margin-left: 15px;
+    padding-right: 15px;
+    flex: 0 0 41.666667%;
+    max-width: 41.666667%;
+  }
+}
+.general-container-info {
+  position: relative;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  @include for-size(mobile) {
+    margin-top: 35px;
+    padding-bottom: 50px;
+  }
+  @include for-size(min-tablet) {
+    margin-top: 35px;
+    padding-bottom: 50px;
+  }
+  @include for-size(tablet) {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+  @include for-size(desktop) {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+  @include for-size(ultra-desktop) {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+  @include for-size(tv) {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
+.heading-sec-info {
+  font-weight: 600;
+  font-size: 18px;
+  color: #0d1933;
+  margin-bottom: 15px;
+  line-height: 26px;
+  text-align: left;
+}
+.paragraph-sec-info {
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
+}

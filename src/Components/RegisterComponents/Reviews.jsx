@@ -6,6 +6,9 @@ import { userFetch } from "../../services/fetchUser";
 export default function Reviews() {
   const [user, setUser] = useState([]);
   const [intId, setIntId] = useState(null);
+  useEffect(() => {
+    return () => clearEffect();
+  }, []);
 
   useEffect(() => {
     if (user.length >= 2) {
@@ -21,7 +24,6 @@ export default function Reviews() {
         userSet();
       }, 5000)
     );
-    return clearEffect();
   }, []);
   // console.log();
   const userSet = () => {
@@ -37,8 +39,9 @@ export default function Reviews() {
   };
 
   const clearEffect = () => {
+    clearInterval(intId);
     setIntId(null);
-    setUser([]);
+    // setUser([]);
   };
 
   const generateRandomNumber = () => {
@@ -69,9 +72,7 @@ export default function Reviews() {
                 />
 
                 <div className="containerinfo-card-reviews">
-                  <h4 className="heading-user-reviews">
-                    {user.name.first} {user.name.last}
-                  </h4>
+                  <h4 className="heading-user-reviews">{user.name.first}</h4>
                   <p className="info-reviews">только что заработал(а)</p>
                   <p className="earnings-reviews">$ {generateRandomNumber()}</p>
                 </div>

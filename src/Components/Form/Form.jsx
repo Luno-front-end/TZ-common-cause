@@ -105,12 +105,7 @@ export default function FormMini({
       return;
     }
     setLink(page);
-    // emailSend(
-    //   nameProp ? nameProp : name,
-    //   emailProp ? emailProp : email,
-    //   lastName,
-    //   number
-    // );
+    emailSend(name, email, lastName, number);
   };
 
   const clearValue = () => {
@@ -219,6 +214,7 @@ export default function FormMini({
                   country={"ua"}
                   preferredCountries={["ua", "ru"]}
                   value={number}
+                  autoComplete="off"
                   onChange={onChangeNumber}
                 />
               </div>
