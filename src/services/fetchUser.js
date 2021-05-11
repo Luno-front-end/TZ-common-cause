@@ -8,7 +8,6 @@ export async function userFetch() {
     const { data } = await axios.get(`?${API_KAY}&nat=us`);
     return data.results;
   } catch (err) {
-    console.log(err);
     throw Error(err);
   }
 }

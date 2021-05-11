@@ -1,7 +1,7 @@
 import useRendomUser from "../hooks/useRendomUser";
 
 export default function Reviews() {
-  const { user, generateRandomNumber } = useRendomUser();
+  const { user } = useRendomUser();
   return (
     <section className="section-reviews">
       <h2 className="heading-one-reviews">Отлично! Вы справились!</h2>
@@ -26,7 +26,7 @@ export default function Reviews() {
                 <div className="containerinfo-card-reviews">
                   <h4 className="heading-user-reviews">{user.name.first}</h4>
                   <p className="info-reviews">только что заработал(а)</p>
-                  <p className="earnings-reviews">$ {generateRandomNumber()}</p>
+                  <p className="earnings-reviews">$ {user.money}</p>
                 </div>
               </li>
             ))}
@@ -36,3 +36,17 @@ export default function Reviews() {
     </section>
   );
 }
+
+// ,
+
+//   {
+//     "name": {
+//       "first": "Stefan"
+//     },
+//     "picture": {
+//       "large": "https://twowords.info/public/img/users/14.jpg"
+//     },
+//     "login": {
+//       "salt": "2"
+//     }
+//   }

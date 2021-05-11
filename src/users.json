@@ -1,0 +1,15 @@
+{
+  "man": {
+    "name": {
+      "first": "Colin"
+    },
+    "picture": {
+      "large": "https://twowords.info/public/img/users/100.jpg"
+    },
+
+    "login": {
+      "salt": "1"
+    },
+    "money": 126.59
+  }
+}
