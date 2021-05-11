@@ -1,11 +1,9 @@
-import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
 import Container from "../Container/Container";
-
-import Logo from "../Logo/Logo";
+import Logo from "../Logo";
 import VideoPlayer from "../VideoPlayer/VideoPlayer";
-import Form from "../Form/Form";
+import Form from "../Form";
 import BodySteps from "../RegisterComponents/BodySteps";
 import Modal from "../Modal";
 import Company from "../Company/Company";
@@ -14,16 +12,14 @@ import HowWork from "../RegisterComponents/HowWork";
 import HelpSupport from "../RegisterComponents/HelpSupport";
 import SectionFormInfo from "../RegisterComponents/SectionFormInfo";
 import MiniCompanyReg from "../Company/MiniCompanyReg";
-import Footer from "../Footer/Footer";
+import Footer from "../Footer";
 
-export default function RegisterInfoView({ modalOpen, checkOpenModal }) {
+export default function RegisterInfoView({ stateModalOpen, checkOpenModal }) {
   document.body.classList.remove("body-styles-thinks");
   document.body.classList.add("body-styles");
 
   const { pathname } = useLocation();
 
-  // useEffect(() => {}, []);
-  // className = "container-registration";
   return (
     <>
       <header>
@@ -38,7 +34,7 @@ export default function RegisterInfoView({ modalOpen, checkOpenModal }) {
               classArrow="arrow-reg"
               btnText="Хочу доступ к «Общему делу»"
               page="/thanks"
-              checkOpenModal={modalOpen}
+              stateModalOpen={stateModalOpen}
             />
             <Company />
           </Container>
@@ -53,7 +49,7 @@ export default function RegisterInfoView({ modalOpen, checkOpenModal }) {
         <Container>
           <HelpSupport />
         </Container>
-        <SectionFormInfo page="/thanks" />
+        <SectionFormInfo page="/thanks" stateModalOpen={stateModalOpen} />
         <Container>
           <section className="section-company-reg">
             <MiniCompanyReg />
@@ -75,6 +71,7 @@ export default function RegisterInfoView({ modalOpen, checkOpenModal }) {
       <Modal
         checkOpenModal={checkOpenModal}
         headerText="Сегодня вам выпал счастливый шанс. Не упустите его!"
+        page="/thanks"
       />
     </>
   );

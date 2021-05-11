@@ -1,0 +1,24 @@
+.container-notFound {
+  background-color: white;
+  width: 100%;
+  height: 100vh;
+}
+.wrapper-notFound {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+}
+.heading-notFound {
+  font-size: 40px;
+  font-weight: 900;
+  margin-bottom: 20px;
+}
+.paragraph-notFound {
+  max-width: 450px;
+  font-size: 25px;
+  font-weight: 600;
+  line-height: 1.5;
+}

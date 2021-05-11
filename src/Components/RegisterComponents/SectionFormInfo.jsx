@@ -1,15 +1,12 @@
-import { useEffect, useState } from "react";
-import { Link, Redirect, useHistory, useLocation } from "react-router-dom";
-
 import FormRegInfo from "./FormRegInfo";
 
-export default function SectionFormInfo({ page }) {
+export default function SectionFormInfo({ page, stateModalOpen }) {
   return (
     <section className="section-reg">
       <div className="container">
         <div className="container-regInfo">
           <div className="wrapper-formInfo">
-            <FormRegInfo page={page} />
+            <FormRegInfo page={page} stateModalOpen={stateModalOpen} />
           </div>
 
           <div className="general-container-info">

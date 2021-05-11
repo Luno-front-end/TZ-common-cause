@@ -1,5 +1,7 @@
 import { useState } from "react";
+
 import { FaVolumeUp } from "react-icons/fa";
+
 import classnames from "classnames";
 
 export default function VideoPlayer({ classContainer, linkVideo }) {

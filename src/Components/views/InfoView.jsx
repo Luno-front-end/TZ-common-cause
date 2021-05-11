@@ -1,8 +1,4 @@
-import { useEffect } from "react";
-import { useLocation } from "react-router";
 import { Link } from "react-router-dom";
-import { emailSend } from "../../services/fetchEmail";
-import ButtonRedirect from "../ButtonRedirect";
 
 export default function InfoView() {
   document.body.classList.add("body-styles-thinks");

@@ -1,111 +1,31 @@
-import { useEffect, useState } from "react";
-import { Link, Redirect, useHistory, useLocation } from "react-router-dom";
-import { ToastContainer, toast } from "react-toastify";
+import { Link, Redirect } from "react-router-dom";
+
+import { ToastContainer } from "react-toastify";
 import { FaUserCircle } from "react-icons/fa";
 import { HiMail } from "react-icons/hi";
+
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import "react-toastify/dist/ReactToastify.css";
 
-import { emailSend } from "../../services/fetchEmail";
+import useSendForm from "../hooks/useSendForm";
 
-export default function FormRegInfo({ page }) {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [number, setNumber] = useState("");
-  const [link, setLink] = useState(null);
-
-  const history = useHistory();
-  const { pathname, nameProp, emailProp } = useLocation();
-
-  useEffect(() => {
-    if (nameProp) {
-      setName(nameProp);
-    }
-    if (emailProp) {
-      setEmail(emailProp);
-    }
-
-    return () => clearValue();
-  }, [emailProp, nameProp]);
-
-  const onChange = (e) => {
-    const { name, value } = e.currentTarget;
-    switch (name) {
-      case "name":
-        setName(value);
-
-        break;
-      case "email":
-        setEmail(value);
-
-        break;
-      case "lastName":
-        setLastName(value);
-
-        break;
-      default:
-        break;
-    }
-  };
-  const onChangeNumber = (e) => {
-    setNumber(e);
-  };
-
-  const onSubmit = (e) => {
-    e.preventDefault();
-    if (pathname === "/") {
-      if (name === "") {
-        toast.error("Ви не ввели имя", { position: "top-center" });
-        return;
-      }
-      if (email === "") {
-        toast.error("Ви не ввели почту", { position: "top-center" });
-        return;
-      }
-    }
-
-    setLink("/registration");
-
-    if (pathname !== "/registration") {
-      return;
-    }
-
-    setLink("");
-
-    if (name === "") {
-      toast.error("Ви не ввели имя", { position: "top-center" });
-      return;
-    }
-    if (email === "") {
-      toast.error("Ви не ввели почту", { position: "top-center" });
-      return;
-    }
-
-    if (lastName === "") {
-      toast.error("Ви не ввели фамилию", { position: "top-center" });
-      return;
-    }
-    if (number === "") {
-      toast.error("Ви не ввели номер", { position: "top-center" });
-      return;
-    }
-    setLink(page);
-    emailSend(name, email, lastName, number);
-  };
-
-  const clearValue = () => {
-    setName("");
-    setEmail("");
-    setLastName("");
-    setNumber("");
-    setLink(null);
-  };
+export default function FormRegInfo({ page, stateModalOpen }) {
+  const {
+    link,
+    name,
+    email,
+    lastName,
+    number,
+    history,
+    onChange,
+    onChangeNumber,
+    onSubmit,
+  } = useSendForm(page);
 
   return (
     <>
-      <ToastContainer />
+      {!stateModalOpen && <ToastContainer />}
       {link && (
         <Redirect
           to={{
@@ -116,9 +36,6 @@ export default function FormRegInfo({ page }) {
           }}
         />
       )}
-
-      {/* <h1 className="heading-modal-home">{headerText}</h1> */}
-
       <div className=" form-reg-info-box">
         <h2 className="heading-reg-info">
           1 ШАГ: Создайте учётную запись в «Общем деле».

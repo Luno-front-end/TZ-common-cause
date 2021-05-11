@@ -1,133 +1,37 @@
-import { useState, useEffect } from "react";
+import { Link, Redirect } from "react-router-dom";
 
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-
-import PhoneInput from "react-phone-input-2";
-import "react-phone-input-2/lib/style.css";
+import { ToastContainer } from "react-toastify";
 
 import { FaUserCircle } from "react-icons/fa";
 import { HiMail } from "react-icons/hi";
 import { VscChromeClose } from "react-icons/vsc";
-import { Link, Redirect, useHistory, useLocation } from "react-router-dom";
+
+import PhoneInput from "react-phone-input-2";
+
 import ModalContainer from "./ModalContainer/ModalContainer";
 import MiniCompany from "./Company/MiniCompanyModal";
-import { emailSend } from "../services/fetchEmail";
+
+import useSendForm from "./hooks/useSendForm";
+import useModal from "./hooks/useModal";
+
+import "react-toastify/dist/ReactToastify.css";
+import "react-phone-input-2/lib/style.css";
 
 export default function ModalHome({ page, checkOpenModal, headerText }) {
-  const [modalOpen, setModalOpen] = useState(false);
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [number, setNumber] = useState("");
-  const [link, setLink] = useState(null);
-
-  const bodyEl = document.querySelector("body");
-  const history = useHistory();
-  const { pathname, nameProp, emailProp } = useLocation();
-
-  useEffect(() => {
-    add();
-    return () => onClose();
-  }, []);
-
-  const add = () => {
-    bodyEl.addEventListener("mouseleave", onMouseLeave);
-    window.addEventListener("keydown", escClose);
-  };
-
-  const escClose = (e) => {
-    if (e.code === "Escape") {
-      onClose();
-    }
-    window.removeEventListener("keydown", escClose);
-  };
-
-  function onMouseLeave(e) {
-    if (e.target.tagName === "BODY") {
-      bodyEl.classList.add("overHiden");
-      checkOpenModal(true);
-      setModalOpen(true);
-    }
-  }
-
-  const onClose = () => {
-    bodyEl.removeEventListener("mouseleave", onMouseLeave);
-    bodyEl.classList.remove("overHiden");
-    checkOpenModal(false);
-    setModalOpen(false);
-  };
-
-  const hendleClickBackdrop = (e) => {
-    if (e.currentTarget === e.target) {
-      onClose();
-    }
-  };
-
-  const onChange = (e) => {
-    const { name, value } = e.currentTarget;
-    switch (name) {
-      case "name":
-        setName(value);
-
-        break;
-      case "email":
-        setEmail(value);
-
-        break;
-      case "lastName":
-        setLastName(value);
-
-        break;
-      default:
-        break;
-    }
-  };
-  const onChangeNumber = (e) => {
-    setNumber(e);
-  };
-
-  const onSubmit = (e) => {
-    e.preventDefault();
-    if (pathname === "/") {
-      if (name === "") {
-        toast.error("Ви не ввели имя", { position: "top-center" });
-        return;
-      }
-      if (email === "") {
-        toast.error("Ви не ввели почту", { position: "top-center" });
-        return;
-      }
-    }
-
-    setLink("/registration");
-
-    if (pathname !== "/registration") {
-      return;
-    }
-
-    setLink("");
-
-    if (name === "") {
-      toast.error("Ви не ввели имя", { position: "top-center" });
-      return;
-    }
-    if (email === "") {
-      toast.error("Ви не ввели почту", { position: "top-center" });
-      return;
-    }
-
-    if (lastName === "") {
-      toast.error("Ви не ввели фамилию", { position: "top-center" });
-      return;
-    }
-    if (number === "") {
-      toast.error("Ви не ввели номер", { position: "top-center" });
-      return;
-    }
-    setLink(page);
-    emailSend(name, email, lastName, number);
-  };
+  // console.log(checkOpenModal());
+  const { modalOpen, hendleClickBackdrop, onClose } = useModal(checkOpenModal);
+  const {
+    link,
+    name,
+    email,
+    lastName,
+    number,
+    history,
+    pathname,
+    onChange,
+    onChangeNumber,
+    onSubmit,
+  } = useSendForm(page);
 
   return (
     modalOpen && (

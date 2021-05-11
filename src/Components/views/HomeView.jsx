@@ -1,22 +1,25 @@
-import Container from "../Container/Container";
+import { useHistory } from "react-router";
+import { useEffect } from "react";
 
-import Logo from "../Logo/Logo";
+import Container from "../Container/Container";
+import Logo from "../Logo";
 import Hiro from "../HomeComponents/Hiro";
 import VideoPlayer from "../VideoPlayer/VideoPlayer";
-import Form from "../Form/Form";
+import Form from "../Form";
 import Company from "../Company/Company";
-import Footer from "../Footer/Footer";
+import Footer from "../Footer";
 
-import { useHistory } from "react-router";
-import { useEffect, useState } from "react";
-import ModalHome from "../Modal";
+import Modal from "../Modal";
 
-export default function HomeViews({ checkOpenModal, modalOpen }) {
+export default function HomeViews({ checkOpenModal, stateModalOpen }) {
   document.body.classList.remove("body-styles");
   document.body.classList.remove("body-styles-thinks");
   const history = useHistory();
+
   useEffect(() => {
     historyTransitions();
+    // console.log(checkOpenModal());
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const historyTransitions = () => {
@@ -43,7 +46,7 @@ export default function HomeViews({ checkOpenModal, modalOpen }) {
           <Form
             page="/registration"
             btnText="Пройти БЕСПЛАТНУЮ регистрацию!"
-            checkOpenModal={modalOpen}
+            stateModalOpen={stateModalOpen}
           />
           <Company />
         </Container>
@@ -54,7 +57,7 @@ export default function HomeViews({ checkOpenModal, modalOpen }) {
           <Footer />
         </Container>
       </footer>
-      <ModalHome
+      <Modal
         checkOpenModal={checkOpenModal}
         page="/registration"
         headerText="Начните получать от 2500 у.е. в месяц!"

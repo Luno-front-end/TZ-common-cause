@@ -1,12 +1,8 @@
-import useInfoTableHook from "../hooks/useInfoTableHook";
+import useInfoTableHook from "./hooks/useInfoTableHook";
 
 export default function InfoTable() {
   const state = useInfoTableHook();
-  // {
-  //   placesNum, watchingNum;
-  // }
 
-  // console.log(isOnline);
   return (
     <div className="container-info-table">
       <div className="container-watching">

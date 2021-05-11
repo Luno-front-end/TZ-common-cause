@@ -14,6 +14,7 @@ export default function useInfoTableHook() {
     clearInterval(idIntW);
     clearInterval(idIntP);
     return () => clearComponent();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
@@ -29,6 +30,7 @@ export default function useInfoTableHook() {
     } else if (watchingNum < 129) {
       reusableInetrvWatching();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [watchingNum]);
   useEffect(() => {
     if (placesNum > 8) {
@@ -50,6 +52,7 @@ export default function useInfoTableHook() {
         }, 6000)
       );
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [placesNum]);
 
   const reusableInetrvWatching = () => {

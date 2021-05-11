@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-import logo from "../../images/main-logo.png";
+import logo from "../images/main-logo.png";
 
 export default function Logo({ classContainerLogo }) {
   return (
