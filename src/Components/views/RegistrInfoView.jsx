@@ -10,6 +10,7 @@ import BodySteps from "../RegisterComponents/BodySteps";
 import Modal from "../Modal";
 import Company from "../Company/Company";
 import Reviews from "../RegisterComponents/Reviews";
+import HowWork from "../RegisterComponents/HowWork";
 
 export default function RegisterInfoView({ modalOpen, checkOpenModal }) {
   document.body.classList.add("body-styles");
@@ -41,6 +42,7 @@ export default function RegisterInfoView({ modalOpen, checkOpenModal }) {
         <Container>
           <Reviews />
         </Container>
+        <HowWork />
       </main>
 
       {/* <footer className="footer-container">
