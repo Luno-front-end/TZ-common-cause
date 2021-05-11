@@ -41,6 +41,12 @@ export default function Reviews() {
     setUser([]);
   };
 
+  const generateRandomNumber = () => {
+    const random = Math.random() * (60 - 600) + 600;
+    return Math.floor(random * 100) / 100;
+  };
+  // console.log(generateRandomNumber());
+
   return (
     <section className="section-reviews">
       <h2 className="heading-one-reviews">Отлично! Вы справились!</h2>
@@ -67,7 +73,7 @@ export default function Reviews() {
                     {user.name.first} {user.name.last}
                   </h4>
                   <p className="info-reviews">только что заработал(а)</p>
-                  <p className="earnings-reviews">$ 333.33</p>
+                  <p className="earnings-reviews">$ {generateRandomNumber()}</p>
                 </div>
               </li>
             ))}

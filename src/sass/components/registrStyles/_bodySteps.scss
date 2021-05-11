@@ -70,9 +70,7 @@
 
   &:nth-child(1) {
     background-image: url(../../../images/step-one.png);
-    @include for-size(tablet) {
-      // max-width: 25%;
-    }
+
     @include for-size(desktop) {
       max-width: 25%;
     }
